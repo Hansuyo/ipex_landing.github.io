@@ -394,6 +394,33 @@
             </div>
         </div>
     </footer>
-
+    <div class="modal fade" id="noticeModal" tabindex="-1" aria-labelledby="noticeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-warning text-dark">
+            <h5 class="modal-title fw-bold" id="noticeModalLabel">
+              <i class="fas fa-exclamation-triangle me-2"></i>안내 말씀
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body py-4 text-center">
+            <p class="mb-0 shadow-none">
+                현재 <strong>회원가입 기능은 제공되지 않으며</strong>,<br> 
+                현재는 폐기된 우선심사시스템의 <br>
+                <strong>개인정보 처리방침</strong>임을 알립니다.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">확인하였습니다</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var myModal = new bootstrap.Modal(document.getElementById('noticeModal'));
+        myModal.show();
+      });
+    </script>
 </body>
 </html>
