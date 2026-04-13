@@ -57,6 +57,12 @@
 
             <p class="small">회사는 개인정보처리방침을 개정하는 경우 웹사이트 공지사항(또는 개별공지)을 통하여 공지할 것입니다.</p>
             <p class="small">○ 본 방침은 2026년 3월 19일부터 시행됩니다.</p>
+
+            <div class="text-end mb-4">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#revisionModal">
+                    <i class="bi bi-info-circle me-1"></i> 주요 개정 내용 확인하기
+                </button>
+            </div>
             
             <h5 class="fw-bold">1. 개인정보의 처리 목적</h5>
             <p class="small">회사는 개인정보를 다음의 목적을 위해 처리합니다. 처리한 개인정보는 다음의 목적이외의 용도로는 사용되지 않으며 이용 목적이 변경될 시에는 사전동의를 구할 예정입니다.</p>
@@ -405,9 +411,90 @@
         </div>
       </div>
     </div>
-    <div id="footer"></div>
- 
 
+    <div class="modal fade" id="revisionModal" tabindex="-1" aria-labelledby="revisionModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-light">
+                    <h5 class="modal-title fw-bold" id="revisionModalLabel">개인정보 처리방침 신구대조표</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs mb-3" id="revisionTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="current-tab" data-bs-toggle="tab" data-bs-target="#current" type="button" role="tab">현행 (변경 전)</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="revised-tab" data-bs-toggle="tab" data-bs-target="#revised" type="button" role="tab">개정 (변경 후)</button>
+                        </li>
+                    </ul>
+                    
+                    <div class="tab-content" id="revisionTabContent">
+                        <div class="tab-pane fade show active" id="current" role="tabpanel">
+                            <div class="table-responsive">
+                                <table class="table table-sm table-bordered">
+                                    <thead class="table-secondary text-center">
+                                        <tr>
+                                            <th style="width: 30%;">항목</th>
+                                            <th>내용</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center fw-bold">수집 항목</td>
+                                            <td>성명, 이메일, 연락처, 우선심사 관련 데이터</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center fw-bold">수집 목적</td>
+                                            <td>우선심사시스템 이용 및 회원 관리</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center fw-bold">쿠키 사용</td>
+                                            <td>로그인 세션 유지를 위한 쿠키 사용</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="revised" role="tabpanel">
+                            <div class="table-responsive">
+                                <table class="table table-sm table-bordered">
+                                    <thead class="table-primary text-center text-white">
+                                        <tr>
+                                            <th style="width: 30%;">항목</th>
+                                            <th>개정 및 변경 내용</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="table-info">
+                                            <td class="text-center fw-bold">수집 항목</td>
+                                            <td><strong>수집하지 않음</strong> (우선심사시스템 폐기)</td>
+                                        </tr>
+                                        <tr class="table-info">
+                                            <td class="text-center fw-bold">수집 목적</td>
+                                            <td><strong>제공하지 않음</strong> (회원가입 기능 삭제)</td>
+                                        </tr>
+                                        <tr class="table-info">
+                                            <td class="text-center fw-bold">쿠키 사용</td>
+                                            <td><strong>미사용</strong> (정적 페이지 전환)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="text-danger small mt-2">* 시스템 개편에 따라 기존 수집된 정보는 모두 안전하게 파기되었습니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         var myModal = new bootstrap.Modal(document.getElementById('noticeModal'));
